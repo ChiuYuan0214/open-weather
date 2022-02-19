@@ -17,8 +17,7 @@ const Record = ({ index, record, send, remove }) => {
   let hour = parseInt(timeArr[0]) > 12 ? timeArr[0] - 12 : timeArr[0];
   hour = parseInt(timeArr[0]) < 10 ? "0" + hour : hour;
 
-  // if minutes is smaller than 10, add "0" before current number.
-  const minutes = parseInt(timeArr[1]) < 10 ? "0" + timeArr[1] : timeArr[1];
+  const minutes = timeArr[1];
 
   const seconds = timeArr[2];
   const timeString = `${hour}:${minutes}:${seconds} ${timeMark}`;

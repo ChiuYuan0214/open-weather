@@ -27,13 +27,14 @@ const WeatherInfo = ({ data, error }) => {
 
     // split the time string by ":", hour : minutes : seconds.
     const time = timeObj.toLocaleTimeString().split(":");
-
+    // define timeMark by checking if 'hour' is greater than 12.
+    const timeMark = parseInt(time[0]) > 12 ? "PM" : "AM";
+    // subtract 'hour' by 12 if greater than 12.
     let hour = parseInt(time[0]) > 12 ? time[0] - 12 : time[0];
+    // add "0" before current number if hour is smaller than 10.
     hour = (parseInt(hour) < 10 ? "0" : "") + hour;
 
-    const minutes = (parseInt(time[1]) < 10 ? "0" : "") + time[1];
-
-    const timeMark = parseInt(time[0]) > 12 ? "PM" : "AM";
+    const minutes = time[1];
 
     content = (
       <section className={styles.info}>
@@ -41,13 +42,17 @@ const WeatherInfo = ({ data, error }) => {
           {city}, {country}
         </p>
         <p className={styles.status}>{status}</p>
-        <p>Description: {description}</p>
         <p>
-          Temperature: {minTemp}C~{maxTemp}C
+          <span>Description:</span> {description}
         </p>
-        <p>Humidity: {humidity}%</p>
         <p>
-          Time: {year}-{month}-{date} {hour}:{minutes} {timeMark}
+          <span>Temperature:</span> {minTemp}C~{maxTemp}C
+        </p>
+        <p>
+          <span>Humidity:</span> {humidity}%
+        </p>
+        <p>
+          <span> Time:</span> {year}-{month}-{date} {hour}:{minutes} {timeMark}
         </p>
       </section>
     );
