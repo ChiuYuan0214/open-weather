@@ -1,0 +1,79 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label,
+.form input,
+.form button {
+  display: block;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.control label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: rgb(224, 92, 52);
+}
+
+.control input {
+  max-width: 7rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+}
+
+.actions button {
+  padding: 0.3rem 0.7rem;
+  border-radius: 25px;
+  background-color: rgb(224, 92, 52);
+  border: 1px solid rgb(224, 92, 52);
+  color: white;
+}
+
+.actions button:last-of-type {
+  margin-left: 0.3rem;
+  background-color: white;
+  border: 1px solid rgb(82, 80, 80);
+  color: rgb(82, 80, 80);
+}
+
+.actions button:hover {
+  background-color: rgb(246, 100, 56);
+  border: 1px solid rgb(246, 100, 56);
+}
+
+.actions button:last-of-type:hover {
+  background-color: rgb(221, 218, 218);
+  border: 1px solid rgb(221, 218, 218);
+}
+
+@media (min-width: 600px) {
+  .form {
+    flex-direction: row;
+    align-items: center;
+  }
+  .control {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .control:nth-of-type(2) {
+    margin: 0 0 0 1rem;
+  }
+
+  .control label {
+    margin: 0 0.5rem 0 0;
+  }
+
+  .actions {
+    margin-left: 1rem;
+  }
+}

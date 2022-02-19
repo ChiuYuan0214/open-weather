@@ -1,0 +1,43 @@
+.info {
+  padding: 1rem 0.5rem 0.5rem;
+  animation: fade-in 1s ease-out forwards;
+}
+
+.info p {
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: rgb(82, 80, 80);
+}
+
+.info p.status {
+  font-size: 2rem;
+  color: rgb(224, 92, 52);
+}
+
+.default {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: rgb(82, 80, 80);
+  animation: fade-in 1s ease-out forwards;
+}
+
+.error {
+  padding: 0.5rem;
+  width: 13rem;
+  background-color: pink;
+  border: 1px solid rgb(184, 16, 16);
+  border-radius: 2px;
+  font-size: 0.8rem;
+  color: rgb(184, 16, 16);
+  animation: fade-in 1s ease-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
